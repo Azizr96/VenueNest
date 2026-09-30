@@ -1,0 +1,21 @@
+{% extends "events/base.html" %}
+
+{% block content %}
+<h1>{{ event.title }}</h1>
+
+<p>{{ event.description }}</p>
+<p><strong>Location:</strong> {{ event.location }}</p>
+<p><strong>Date:</strong> {{ event.date }}</p>
+<p><strong>Time:</strong> {{ event.start_time }}</p>
+<p><strong>Capacity:</strong> {{ event.capacity }}</p>
+
+{% if user.is_staff %}
+    <a class="btn btn-warning" href="{% url 'event_edit' event.pk %}">
+        Edit
+    </a>
+
+    <a class="btn btn-danger" href="{% url 'event_delete' event.pk %}">
+        Delete
+    </a>
+{% endif %}
+{% endblock %}

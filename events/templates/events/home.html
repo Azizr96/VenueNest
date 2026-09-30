@@ -1,0 +1,10 @@
+{% extends "events/base.html" %}
+
+{% block content %}
+<h1>VenueNest</h1>
+<p>Discover and book upcoming events.</p>
+
+<a class="btn btn-primary" href="{% url 'event_list' %}">
+    Browse Events
+</a>
+{% endblock %}
