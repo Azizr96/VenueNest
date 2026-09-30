@@ -84,11 +84,13 @@ WSGI_APPLICATION = 'venuenest.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.1/ref/settings/#databases
 
+database_url = os.environ.get("DATABASE_URL", "sqlite:///db.sqlite3")
+
 DATABASES = {
     "default": dj_database_url.config(
-        default=os.environ.get("DATABASE_URL"),
+        default=database_url,
         conn_max_age=600,
-        ssl_require=True,
+        ssl_require=database_url.startswith("postgres") or database_url.startswith("postgre"),
     )
 }
 
