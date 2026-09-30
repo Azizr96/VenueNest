@@ -21,3 +21,27 @@ class Event(models.Model):
 
     def __str__(self):
         return self.title
+
+class Booking(models.Model):
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name="bookings",
+    )
+    event = models.ForeignKey(
+        Event,
+        on_delete=models.CASCADE,
+        related_name="bookings",
+    )
+    booked_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=["user", "event"],
+                name="unique_user_event_booking",
+            )
+        ]
+
+    def __str__(self):
+        return f"{self.user.username} - {self.event.title}"
