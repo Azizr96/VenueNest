@@ -1,0 +1,39 @@
+{% extends "events/base.html" %}
+
+{% block content %}
+<h1>My Bookings</h1>
+
+{% for booking in bookings %}
+    <div class="card mb-3">
+        <div class="card-body">
+            <h2 class="h5">{{ booking.event.title }}</h2>
+            <p>{{ booking.event.date }} at {{ booking.event.start_time }}</p>
+            <p>{{ booking.event.location }}</p>
+
+            <a
+                class="btn btn-primary"
+                href="{% url 'event_detail' booking.event.pk %}"
+            >
+                View Event
+            </a>
+
+            <form
+                class="d-inline"
+                method="post"
+                action="{% url 'cancel_booking' booking.pk %}"
+            >
+                {% csrf_token %}
+                <button class="btn btn-outline-danger" type="submit">
+                    Cancel
+                </button>
+            </form>
+        </div>
+    </div>
+{% empty %}
+    <p>You have no bookings yet.</p>
+
+    <a class="btn btn-primary" href="{% url 'event_list' %}">
+        Browse Events
+    </a>
+{% endfor %}
+{% endblock %}
