@@ -8,8 +8,44 @@
 <p><strong>Date:</strong> {{ event.date }}</p>
 <p><strong>Time:</strong> {{ event.start_time }}</p>
 <p><strong>Capacity:</strong> {{ event.capacity }}</p>
+<p><strong>Spaces remaining:</strong> {{ spaces_remaining }}</p>
+
+{% if user.is_authenticated %}
+    {% if booking %}
+        <p class="alert alert-success">You are booked for this event.</p>
+
+        <form method="post" action="{% url 'cancel_booking' booking.pk %}">
+            {% csrf_token %}
+            <button class="btn btn-outline-danger" type="submit">
+                Cancel Booking
+            </button>
+        </form>
+
+    {% elif is_past %}
+        <p class="alert alert-secondary">
+            This event has already passed.
+        </p>
+
+    {% elif is_sold_out %}
+        <p class="alert alert-danger">
+            This event is sold out.
+        </p>
+
+    {% else %}
+        <form method="post" action="{% url 'book_event' event.pk %}">
+            {% csrf_token %}
+            <button class="btn btn-success" type="submit">
+                Book Event
+            </button>
+        </form>
+    {% endif %}
+{% else %}
+    <p>Please log in to book this event.</p>
+{% endif %}
 
 {% if user.is_staff %}
+    <hr>
+
     <a class="btn btn-warning" href="{% url 'event_edit' event.pk %}">
         Edit
     </a>
