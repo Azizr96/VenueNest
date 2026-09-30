@@ -4,6 +4,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 
 from .forms import EventForm
 from .models import Booking, Event
+from datetime import date
 
 
 def home(request):
