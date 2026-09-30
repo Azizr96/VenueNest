@@ -90,3 +90,59 @@ def event_delete(request, pk):
         {"event": event},
     )
 
+@login_required
+def book_event(request, pk):
+    event = get_object_or_404(Event, pk=pk)
+
+    if request.method != "POST":
+        return redirect("event_detail", pk=event.pk)
+
+    if event.date < date.today():
+        messages.error(request, "Past events cannot be booked.")
+        return redirect("event_detail", pk=event.pk)
+
+    if Booking.objects.filter(
+        user=request.user,
+        event=event,
+    ).exists():
+        messages.warning(request, "You have already booked this event.")
+        return redirect("event_detail", pk=event.pk)
+
+    if event.bookings.count() >= event.capacity:
+        messages.error(request, "This event is sold out.")
+        return redirect("event_detail", pk=event.pk)
+
+    Booking.objects.create(
+        user=request.user,
+        event=event,
+    )
+
+    messages.success(request, "Your booking is confirmed.")
+    return redirect("my_bookings")
+
+@login_required
+def cancel_booking(request, pk):
+    booking = get_object_or_404(
+        Booking,
+        pk=pk,
+        user=request.user,
+    )
+
+    if request.method == "POST":
+        booking.delete()
+        messages.success(request, "Booking cancelled.")
+
+    return redirect("my_bookings")
+
+
+@login_required
+def my_bookings(request):
+    bookings = Booking.objects.filter(
+        user=request.user
+    ).select_related("event")
+
+    return render(
+        request,
+        "events/my_bookings.html",
+        {"bookings": bookings},
+    )
