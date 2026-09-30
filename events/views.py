@@ -22,10 +22,30 @@ def event_list(request):
 
 def event_detail(request, pk):
     event = get_object_or_404(Event, pk=pk)
+
+    booking = None
+
+    if request.user.is_authenticated:
+        booking = Booking.objects.filter(
+            user=request.user,
+            event=event,
+        ).first()
+
+    booked_count = event.bookings.count()
+    spaces_remaining = max(event.capacity - booked_count, 0)
+    is_sold_out = spaces_remaining == 0
+    is_past = event.date < date.today()
+
     return render(
         request,
         "events/event_detail.html",
-        {"event": event},
+        {
+            "event": event,
+            "booking": booking,
+            "spaces_remaining": spaces_remaining,
+            "is_sold_out": is_sold_out,
+            "is_past": is_past,
+        },
     )
 
 
