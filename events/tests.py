@@ -1,7 +1,6 @@
 from django.test import TestCase
 
 # Create your tests here.
-<<<<<<< HEAD
 from datetime import date, timedelta
 
 from django.contrib.auth.models import User
@@ -216,5 +215,3 @@ class AuthenticationTests(TestCase):
             response.status_code,
             200
         )
-=======
->>>>>>> 3e0bb43c2bafbb88d2b05820ebdcb8f26731bf1b
