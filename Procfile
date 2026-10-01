@@ -1,0 +1,1 @@
+web: gunicorn venuenest.wsgi
