@@ -22,7 +22,6 @@ class Event(models.Model):
     def __str__(self):
         return self.title
 
-
 class Booking(models.Model):
     user = models.ForeignKey(
         User,
