@@ -1,6 +1,6 @@
 # VenueNest
 
-**Developers:** Rauhan Aziz ([Azizr96](https://github.com/Azizr96)),Shruti Jindal(https://github.com/shrutijind),Davy Berry
+**Developers:** Rauhan Aziz ([Azizr96](https://github.com/Azizr96)),Shruti Jindal(https://github.com/shrutijind),Davy (https://github.com/davy-berry), Mohammed Chaudhary (https://github.com/nasim-orion/), Marcel Szymczak (https://github.com/xmarcelx2018-cmd)
 
 VenueNest is a responsive event-booking web application built with Django. It allows visitors to browse upcoming events, registered users to make and manage bookings, and staff users to create, edit, and delete events.
 
@@ -88,8 +88,11 @@ Wireframes are stored in the `documentation/wireframes/` directory.
 | Page | Mobile | Tablet | Desktop |
 | --- | --- | --- | --- |
 | **Home** | ![Home Mobile](assets/mobile.png) | ![Home Tablet](assets/tablet.png) | ![Home Desktop](assets/desktop.png) |
-| **Register** | ![Register Mobile](documentation/wireframes/mobile-register.png) | ![Register Tablet](documentation/wireframes/tablet-register.png) | ![Register Desktop](documentation/wireframes/desktop-register.png) |
-| **Login** | ![Login Mobile](documentation/wireframes/mobile-login.png) | ![Login Tablet](documentation/wireframes/tablet-login.png) | ![Login Desktop](documentation/wireframes/desktop-login.png) |
+| **Register** |
+ ![Register Tablet](assets/logintab.png) |
+ 
+| **Login** | 
+![Register Desktop](assets/login.png) 
 
 #### 5. Surface
 
@@ -269,15 +272,7 @@ The audit checks:
 
 Run Lighthouse for both mobile and desktop on key public pages:
 
-| Page | Mobile Screenshot | Desktop Screenshot | Notes |
-| --- | --- | --- | --- |
-| **Home** | `documentation/lighthouse/mobile-home.png` | `documentation/lighthouse/desktop-home.png` | To be completed |
-| **Events** | `documentation/lighthouse/mobile-events.png` | `documentation/lighthouse/desktop-events.png` | To be completed |
-| **Event Detail** | `documentation/lighthouse/mobile-event-detail.png` | `documentation/lighthouse/desktop-event-detail.png` | To be completed |
-| **Register** | `documentation/lighthouse/mobile-register.png` | `documentation/lighthouse/desktop-register.png` | To be completed |
-| **Login** | `documentation/lighthouse/mobile-login.png` | `documentation/lighthouse/desktop-login.png` | To be completed |
-
-*Authenticated pages can also be audited manually while logged in where useful.*
+ ![Mobile](assets/mobileperf.png) | ![ Desktop](assets/deskperf.png) | 
 
 ---
 
