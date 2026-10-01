@@ -1,9 +1,14 @@
 {% extends "events/base.html" %}
 
 {% block content %}
-<h1>{{ event.title }}</h1>
+<div class="card shadow-sm border-0 event-detail">
+    <div class="card-body p-4">
+
+<h1 class="mb-3">{{ event.title }}</h1>
 
 <p>{{ event.description }}</p>
+<hr>
+
 <p><strong>Location:</strong> {{ event.location }}</p>
 <p><strong>Date:</strong> {{ event.date }}</p>
 <p><strong>Time:</strong> {{ event.start_time }}</p>
@@ -40,18 +45,23 @@
         </form>
     {% endif %}
 {% else %}
-    <p>Please log in to book this event.</p>
+    <p class="alert alert-info">Please log in to book this event.</p>
 {% endif %}
 
 {% if user.is_staff %}
     <hr>
 
-    <a class="btn btn-warning" href="{% url 'event_edit' event.pk %}">
-        Edit
-    </a>
+    <div class="d-flex gap-2">
+        <a class="btn btn-warning" href="{% url 'event_edit' event.pk %}">
+            Edit
+        </a>
 
-    <a class="btn btn-danger" href="{% url 'event_delete' event.pk %}">
-        Delete
-    </a>
+        <a class="btn btn-danger" href="{% url 'event_delete' event.pk %}">
+            Delete
+        </a>
+    </div>
 {% endif %}
+
+    </div>
+</div>
 {% endblock %}

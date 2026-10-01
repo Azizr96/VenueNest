@@ -1,13 +1,13 @@
 {% extends "events/base.html" %}
 
 {% block content %}
-<h1>My Bookings</h1>
+<h1 class="page-heading">My Bookings</h1>
 
 {% for booking in bookings %}
-    <div class="card mb-3">
+    <div class="card mb-3 shadow-sm border-0">
         <div class="card-body">
             <h2 class="h5">{{ booking.event.title }}</h2>
-            <p>{{ booking.event.date }} at {{ booking.event.start_time }}</p>
+            <p class="mb-1">{{ booking.event.date }} at {{ booking.event.start_time }}</p>
             <p>{{ booking.event.location }}</p>
 
             <a
