@@ -8,6 +8,7 @@ from datetime import date
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 
+
 def home(request):
     events = Event.objects.all()[:3]
     return render(request, "events/home.html", {"events": events})
@@ -112,6 +113,7 @@ def event_delete(request, pk):
         {"event": event},
     )
 
+
 @login_required
 def book_event(request, pk):
     event = get_object_or_404(Event, pk=pk)
@@ -142,6 +144,7 @@ def book_event(request, pk):
     messages.success(request, "Your booking is confirmed.")
     return redirect("my_bookings")
 
+
 @login_required
 def cancel_booking(request, pk):
     booking = get_object_or_404(
@@ -168,7 +171,6 @@ def my_bookings(request):
         "events/my_bookings.html",
         {"bookings": bookings},
     )
-
 
 
 def register(request):
