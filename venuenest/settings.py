@@ -11,10 +11,14 @@ https://docs.djangoproject.com/en/6.1/ref/settings/
 """
 
 import os
-import env
 
 from pathlib import Path
 import dj_database_url
+
+try:
+    import env
+except ImportError:
+    pass
 
 
 
@@ -30,7 +34,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG", "False") == "True"
+DEBUG = os.environ.get("DJANGO_DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = [
     ".herokuapp.com",
