@@ -9,8 +9,9 @@ The project was developed as a team hackathon using an Agile workflow. The aim w
 The idea for VenueNest was chosen because event-booking systems contain several useful real-world development challenges within a manageable project scope. The application needs to support different user roles, protect restricted actions, manage relationships between users and events, prevent invalid bookings, and present information clearly across mobile, tablet, and desktop devices.
 
 The live application is deployed on Heroku.
+https://venuenest-c59f0cde663d.herokuapp.com/
 
-![VenueNest responsive mockup](documentation/mockup.png)
+![VenueNest responsive mockup](assets/home.png)
 
 ---
 
@@ -83,11 +84,16 @@ The project scope was kept deliberately focused so that the core booking journey
 The interface was designed around a simple page hierarchy and reusable Bootstrap components.
 
 ##### Wireframes
-Wireframes are stored in the `documentation/wireframes/` directory.
+Wireframes are stored in the assets folder.
 
-| Page | Mobile | Tablet | Desktop |
-| --- | --- | --- | --- |
-| **Home** | ![Home Mobile](assets/mobile.png) | ![Home Tablet](assets/tablet.png) | ![Home Desktop](assets/desktop.png) |
+
+| **Home** |
+ ![Home Mobile](assets/mobile.png) | 
+ 
+ ![Home Tablet](assets/tablet.png) | 
+ 
+ ![Home Desktop](assets/desktop.png) |
+
 | **Register** |
  ![Register Tablet](assets/logintab.png) |
  
@@ -129,24 +135,12 @@ Wireframes are stored in the `documentation/wireframes/` directory.
 
 | Feature | Description | Screenshot |
 | --- | --- | --- |
-| **Registration** | Visitors can create a Django user account. | ![Registration](documentation/features/register.png) |
-| **Login** | Registered users can authenticate securely. | ![Login](documentation/features/login.png) |
-| **Logout** | Authenticated users can securely log out. | ![Logout](documentation/features/logout.png) |
-| **Events List** | Visitors can browse available events. | ![Events list](documentation/features/event-list.png) |
-| **Event Detail** | Users can view date, time, location, capacity, and booking info. | ![Event detail](documentation/features/event-detail.png) |
-| **Create Event** | Staff users can create new events. | ![Create event](documentation/features/create-event.png) |
-| **Edit Event** | Staff users can update existing events. | ![Edit event](documentation/features/edit-event.png) |
-| **Delete Event** | Staff users can delete events via confirmation screen. | ![Delete event](documentation/features/delete-event.png) |
-| **Book Event** | Authenticated users can reserve a place on an event. | ![Book event](documentation/features/book-event.png) |
-| **My Bookings** | Authenticated users can view their bookings in one place. | ![My bookings](documentation/features/my-bookings.png) |
-| **Cancel Booking** | Users can cancel their own booking. | ![Cancel booking](documentation/features/cancel-booking.png) |
-| **Duplicate Protection** | Prevents booking the same event twice. | ![Duplicate protection](documentation/features/duplicate-booking.png) |
-| **Capacity Protection** | Prevents bookings once event capacity is reached. | ![Capacity protection](documentation/features/sold-out.png) |
-| **Past Event Protection** | Prevents bookings for events whose date has passed. | ![Past event protection](documentation/features/past-event.png) |
-| **Auth-aware Nav** | Options update dynamically based on user session state. | ![Navigation](documentation/features/navigation.png) |
-| **User Feedback** | Django messages display success and error notifications. | ![Messages](documentation/features/messages.png) |
-| **Responsive UI** | Bootstrap and CSS layouts for mobile, tablet, and desktop. | ![Responsive interface](documentation/features/responsive.png) |
-| **Heroku Deployment** | Live application deployed on Heroku. | ![Heroku deployment](documentation/features/heroku.png) |
+| **Registration** | Visitors can create a Django user account. | ![Registration](assets/register.png) |
+
+| **Login** | Registered users can authenticate securely. | ![Login](assets/login1.png) |
+
+| **Events List** | Visitors can browse available events. | ![Events list](assets/events.png) |
+|
 
 ---
 
@@ -202,59 +196,36 @@ Manual testing was carried out against the deployed application to confirm that 
 
 ### Authentication and Navigation
 
-| Test | Expected Outcome | Test Performed | Result | Screenshot |
-| --- | --- | --- | --- | --- |
-| **Register with valid details** | A new account is created and the user becomes authenticated. | Submit the registration form with valid unique credentials. | To be completed | `documentation/testing/register.png` |
-| **Register with invalid/duplicate details** | Invalid data is rejected and validation feedback is shown. | Submit invalid or duplicate registration details. | To be completed | `documentation/testing/register-invalid.png` |
-| **Login with valid credentials** | User is logged in and redirected successfully. | Submit the login form with a valid account. | To be completed | `documentation/testing/login.png` |
-| **Login with invalid credentials** | Login is rejected and the user remains unauthenticated. | Submit invalid credentials. | To be completed | `documentation/testing/login-invalid.png` |
-| **Logout** | Session ends and authenticated navigation options disappear. | Click Logout while signed in. | To be completed | `documentation/testing/logout.png` |
-| **Guest navigation** | Guest sees Events, Login, and Register but not restricted user/staff links. | Visit the application while logged out. | To be completed | `documentation/testing/guest-nav.png` |
-| **Authenticated navigation** | Logged-in user sees My Bookings and Logout. | Log in as a standard user. | To be completed | `documentation/testing/user-nav.png` |
-| **Staff navigation** | Staff user sees Create Event controls. | Log in as a staff/superuser account. | To be completed | `documentation/testing/staff-nav.png` |
 
----
+| **Register with valid details** | A new account is created and the user becomes authenticated. | Submit the registration form with valid unique credentials.| 
 
-### Event Management
+![Login](assets/register.png)
 
-| Test | Expected Outcome | Test Performed | Result | Screenshot |
-| --- | --- | --- | --- | --- |
-| **View event list** | Available events are displayed. | Open `/events/`. | To be completed | `documentation/testing/event-list.png` |
-| **View event detail** | Selected event information is displayed correctly. | Open an event from the event list. | To be completed | `documentation/testing/event-detail.png` |
-| **Staff create event** | Valid event is created and appears in the event list/detail page. | Submit the Create Event form as staff. | To be completed | `documentation/testing/create-event.png` |
-| **Staff edit event** | Changes are saved and shown on the event detail page. | Edit an existing event as staff. | To be completed | `documentation/testing/edit-event.png` |
-| **Staff delete event** | Event is deleted after confirmation. | Delete an existing event as staff. | To be completed | `documentation/testing/delete-event.png` |
-| **Standard user attempts event management** | User cannot create, edit, or delete events. | Attempt restricted URLs/actions as a non-staff account. | To be completed | `documentation/testing/staff-protection.png` |
 
----
+| **Register with invalid/duplicate details** | Invalid data is rejected and validation feedback is shown. | Submit invalid or duplicate registration details. 
 
-### Booking Functionality
 
-| Test | Expected Outcome | Test Performed | Result | Screenshot |
-| --- | --- | --- | --- | --- |
-| **Book available event** | Booking is created successfully. | Log in and book an event with remaining capacity. | To be completed | `documentation/testing/book-event.png` |
-| **View My Bookings** | User sees only their own bookings. | Open My Bookings after creating a booking. | To be completed | `documentation/testing/my-bookings.png` |
-| **Cancel own booking** | Booking is removed and the place becomes available again. | Cancel a booking from My Bookings/event detail. | To be completed | `documentation/testing/cancel-booking.png` |
-| **Duplicate booking** | Second booking for the same user/event is blocked. | Attempt to book the same event twice. | To be completed | `documentation/testing/duplicate-booking.png` |
-| **Sold-out event** | New bookings are blocked when capacity is reached. | Fill event capacity then attempt another booking. | To be completed | `documentation/testing/sold-out.png` |
-| **Past event** | Booking is blocked if the event date has passed. | Attempt to book an event dated in the past. | To be completed | `documentation/testing/past-event.png` |
-| **Unauthenticated booking** | Guest cannot complete a booking action. | Attempt booking while logged out. | To be completed | `documentation/testing/login-required.png` |
-| **Cancel another user's booking** | User cannot cancel a booking belonging to another account. | Attempt to access another user's cancellation route. | To be completed | `documentation/testing/booking-ownership.png` |
+ ![Login](assets/invalid.png) |
 
----
+
+| **Login with valid credentials** | User is logged in and redirected successfully. | Submit the login form with a valid account. 
+
+
+ [Login](assets/loginvalid.png)
+
 
 ## Responsive Manual Checks
 
 Responsive behaviour is checked manually using browser developer tools.
 
-| Area | Mobile (~375px) | Tablet (~768px) | Desktop (1200px+) | Result |
+| Area | Mobile (~375px) | Tablet (~768px) | Desktop (1200px+) |
 | --- | --- | --- | --- | --- |
-| **Navigation** | Check menu toggles correctly | Check horizontal alignment | Full bar rendered | To be completed |
-| **Home page** | Check layout and CTA | Check spacing/cards | Check full layout | To be completed |
-| **Event list** | Cards stack correctly | Cards resize correctly | Multi-column layout | To be completed |
-| **Forms** | Inputs fit viewport | Forms remain readable | Forms remain centred/readable | To be completed |
-| **Event detail** | No overflow | Content remains clear | Content uses available space | To be completed |
-| **My Bookings** | Cards/actions remain usable | Layout remains clear | Layout remains clear | To be completed |
+| **Navigation** | Check menu To be completed |
+| **Home page** | Check layout and CTA | Check spacing/cards | Check full layout | 
+| **Event list** | Cards stack correctly | Cards resize correctly | Multi-column layout | 
+| **Forms** | Inputs fit viewport | Forms remain readable | Forms remain centred/readable | 
+| **Event detail** | No overflow | Content remains clear | Content uses available space | 
+| **My Bookings** | Cards/actions remain usable | Layout remains clear | Layout remains clear 
 
 ---
 
@@ -292,18 +263,32 @@ The W3C Markup Validation Service is used to validate the final rendered HTML. B
 
 The project's custom CSS is validated using the W3C CSS Validation Service. Third-party Bootstrap CSS is not part of the team's custom code and does not need to be validated as project-authored CSS.
 
-| File | Validator | Screenshot | Result / Notes |
-| --- | --- | --- | --- |
-| `events/static/events/css/style.css` | W3C CSS Validator | `documentation/validation/css-style.png` | To be completed |
+
+![CSS](assets/cssval.png)
 
 ---
 
-## JavaScript Validation
+## PEP8
 
-Custom JavaScript should be validated using JSHint where applicable. If the project contains custom ES6 JavaScript, include this directive at the top of the relevant file before validation:
+|admin.py|
+![Admin](assets/adminpy.png)
 
-```javascript
-/* jshint esversion: 11 */
+
+|forms.py|
+![Forms](assets/formspy.png)
+
+
+|models.py|
+![Models](assets/modelspy.png)
+
+
+|urls.py|
+![Url](assets/urlspy.png)
+
+
+
+
+
 
 # Deployment & Local Development
 
@@ -326,3 +311,21 @@ The project uses Heroku for cloud deployment, PostgreSQL for the production data
 4. **Procfile:** Add a file named `Procfile` in the root directory:
    ```txt
    web: gunicorn venuenest.wsgi
+
+
+ 
+
+### Content
+* **Django Documentation:** Referenced for framework architecture, URL routing, models, and view guidance.
+* **Bootstrap Documentation:** Used for responsive layout structure, navigation bars, cards, and UI components.
+* **Heroku Documentation:** Referenced for web application deployment and environment variable configurations.
+* **WhiteNoise Documentation:** Used for serving static files efficiently in production.
+* **Code Institute:** Course material, project criteria, and documentation guidance informed the structural setup.
+* **ChatGPT:** Utilized to support real-time debugging, architectural planning, code optimization, and documentation design.
+
+### Media
+* All project screenshots, wireframes, validation results, and Chrome Lighthouse reports are stored inside the root-level `assets/` and `documentation/` directories to separate development assets from Django static files.
+
+
+### Acknowledgements
+Special thanks to the full **VenueNest** hackathon team for collaborating on project development, Git/GitHub feature-branch workflows, comprehensive testing, and full integration throughout the project.Code Institute Team for all guidance and support.
