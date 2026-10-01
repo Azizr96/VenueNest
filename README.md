@@ -199,8 +199,6 @@ VenueNest was tested using a focused combination of manual functional testing an
 
 Manual testing was carried out against the deployed application to confirm that the main user journeys, permissions, and defensive booking rules work as intended.
 
-> [!IMPORTANT] 
-> Update the **Result** and **Screenshot** columns with the final observed results before submission. Do not record a test as passed until it has actually been completed.
 
 ### Authentication and Navigation
 
@@ -283,17 +281,10 @@ The W3C Markup Validation Service is used to validate the final rendered HTML. B
 * **For public pages:** Use the deployed Heroku URL and validate by URI.
 * **For authenticated pages:** Open the deployed page while logged in, select **View Page Source**, copy the rendered HTML, and validate using direct input.
 
-| Page / Template | Validation Method | Screenshot | Result / Notes |
+| Page / Template | Validation Method | Screenshot | 
 | --- | --- | --- | --- |
-| **Home** | Live deployed URL | `documentation/validation/html-home.png` | To be completed |
-| **Events** | Live deployed URL | `documentation/validation/html-events.png` | To be completed |
-| **Event Detail** | Live URL / rendered source | `documentation/validation/html-event-detail.png` | To be completed |
-| **Register** | Live deployed URL | `documentation/validation/html-register.png` | To be completed |
-| **Login** | Live deployed URL | `documentation/validation/html-login.png` | To be completed |
-| **My Bookings** | Rendered source while authenticated | `documentation/validation/html-my-bookings.png` | To be completed |
-| **Create Event** | Rendered source while staff-authenticated | `documentation/validation/html-create-event.png` | To be completed |
-| **Edit Event** | Rendered source while staff-authenticated | `documentation/validation/html-edit-event.png` | To be completed |
-| **Delete Event** | Rendered source while staff-authenticated | `documentation/validation/html-delete-event.png` | To be completed |
+| **Home** | Live deployed URL | ![Home](assets/htmlhome.png) | 
+| **Events** | Live deployed URL | ![Event](assets/htmlevent.png)
 
 ---
 
