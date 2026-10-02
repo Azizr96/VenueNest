@@ -449,24 +449,29 @@ Recommended minimum:
 
 ## Lighthouse Audit
 
-Chrome Lighthouse is used against the deployed Heroku application.
 
-The audit measures:
+The audits measured:
 
-- Performance;
-- Accessibility;
-- Best Practices;
-- SEO.
+- **Performance**
+- **Accessibility**
+- **Best Practices**
+- **SEO**
 
-Run Lighthouse in both **Mobile** and **Desktop** modes.
 
-| Page | Mobile | Desktop | Notes |
-| --- | --- | --- | --- |
-| Home | ![Mobile Lighthouse](assets/mobileperf.png) | ![Desktop Lighthouse](assets/deskperf.png) | Add final scores |
-| Events | Add screenshot | Add screenshot | Add final scores |
-| Event Detail | Add screenshot | Add screenshot | Add final scores |
-| Register | Add screenshot | Add screenshot | Add final scores |
-| Login | Add screenshot | Add screenshot | Add final scores |
+| Page | Device | Performance | Accessibility | Best Practices | SEO | Evidence |
+| --- | --- | ---: | ---: | ---: | ---: | --- |
+| **Home** | Mobile | **98** | **92** | **100** | **90** | ![Mobile Home Lighthouse](assets/lighthouse/mobile-home.png) |
+| **Events** | Mobile | **98** | **92** | **100** | **90** | ![Mobile Events Lighthouse](assets/lighthouse/mobile-events.png) |
+| **Event Detail** | Mobile | **98** | **92** | **100** | **90** | ![Mobile Event Detail Lighthouse](assets/lighthouse/mobile-event-detail.png) |
+| **Register** | Mobile | **98** | **94** | **100** | **90** | ![Mobile Register Lighthouse](assets/lighthouse/mobile-register.png) |
+| **Login** | Mobile | **98** | **93** | **100** | **90** | ![Mobile Login Lighthouse](assets/lighthouse/mobile-login.png) |
+| **Home** | Desktop | **100** | **85** | **100** | **90** | ![Desktop Home Lighthouse](assets/lighthouse/desktop-home.png) |
+| **Events** | Desktop | **100** | **85** | **100** | **90** | ![Desktop Events Lighthouse](assets/lighthouse/desktop-events.png) |
+| **Event Detail** | Desktop | **100** | **85** | **100** | **90** | ![Desktop Event Detail Lighthouse](assets/lighthouse/desktop-event-detail.png) |
+| **Register** | Desktop | **100** | **94** | **100** | **90** | ![Desktop Register Lighthouse](assets/lighthouse/desktop-register.png) |
+| **Login** | Desktop | **100** | **90** | **100** | **90** | ![Desktop Login Lighthouse](assets/lighthouse/desktop-login.png) |
+
+Due to the limited timeframe of the hackathon, the team was unable to investigate and implement further improvements to the Lighthouse scores before submission. The results have therefore been documented as they were recorded during final testing. Areas such as accessibility and SEO could be reviewed and improved in future development iterations.
 
 ---
 
@@ -527,15 +532,6 @@ Generated migration files and `__pycache__` files are excluded.
 | `venuenest/urls.py` | ![urls.py](assets/urlscipy.png) | PASS |
 | `manage.py` | ![manage.py](assets/managepy.png) | PASS |
 
----
-
-## JavaScript Validation
-
-If VenueNest contains project-authored JavaScript, it should be checked with JSHint.
-
-If there is **no custom JavaScript** and only third-party Bootstrap JavaScript is used, record:
-
-> **Not applicable — VenueNest contains no project-authored JavaScript requiring validation.**
 
 ---
 
