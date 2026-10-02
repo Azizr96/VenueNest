@@ -431,19 +431,25 @@ The following screenshots demonstrate how the main pages adapt across those brea
 
 ## Browser Compatibility
 
-The deployed application should be checked in at least three browsers.
+VenueNest was tested across multiple browser engines using Playwright.
 
-Recommended minimum:
+The tested browsers were:
 
-- Google Chrome;
-- Microsoft Edge;
-- Mozilla Firefox.
+- Microsoft Edge
+- Chromium
+- Firefox
+- WebKit
 
-| Browser | Core Navigation | Authentication | Booking | Layout | Result |
-| --- | --- | --- | --- | --- | --- |
-| Chrome | Test | Test | Test | Test | Add result |
-| Edge | Test | Test | Test | Test | Add result |
-| Firefox | Test | Test | Test | Test | Add result |
+WebKit was used to approximate Safari rendering because a macOS device with Safari was not available.
+
+| Page | Edge | Chromium | Firefox | WebKit |
+| --- | --- | --- | --- | --- |
+| Home | ![Edge Home](assets/browsers/edge-home.png) | ![Chromium Home](assets/browsers/chromium-home.png) | ![Firefox Home](assets/browsers/firefox-home.png) | ![WebKit Home](assets/browsers/webkit-home.png) |
+| Events | ![Edge Events](assets/browsers/edge-events.png) | ![Chromium Events](assets/browsers/chromium-events.png) | ![Firefox Events](assets/browsers/firefox-events.png) | ![WebKit Events](assets/browsers/webkit-events.png) |
+| Event Detail | ![Edge Event Detail](assets/browsers/edge-event-detail.png) | ![Chromium Event Detail](assets/browsers/chromium-event-detail.png) | ![Firefox Event Detail](assets/browsers/firefox-event-detail.png) | ![WebKit Event Detail](assets/browsers/webkit-event-detail.png) |
+| Register | ![Edge Register](assets/browsers/edge-register.png) | ![Chromium Register](assets/browsers/chromium-register.png) | ![Firefox Register](assets/browsers/firefox-register.png) | ![WebKit Register](assets/browsers/webkit-register.png) |
+| Login | ![Edge Login](assets/browsers/edge-login.png) | ![Chromium Login](assets/browsers/chromium-login.png) | ![Firefox Login](assets/browsers/firefox-login.png) | ![WebKit Login](assets/browsers/webkit-login.png) |
+| My Bookings | ![Edge My Bookings](assets/browsers/edge-my-bookings.png) | ![Chromium My Bookings](assets/browsers/chromium-my-bookings.png) | ![Firefox My Bookings](assets/browsers/firefox-my-bookings.png) | ![WebKit My Bookings](assets/browsers/webkit-my-bookings.png) |
 
 ---
 
