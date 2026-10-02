@@ -248,8 +248,9 @@ VenueNest uses Bootstrap's default system font stack for readability, consistenc
 | **W3C Validator** | HTML validation. |
 | **W3C CSS Validator** | CSS validation. |
 | **CI Python Linter / Flake8** | Python style validation. |
-| **JSHint** | JavaScript validation where applicable. |
 | **Chrome Lighthouse** | Performance, accessibility, best-practices and SEO audits. |
+| **ChatGPT** | Debugging, Code suggestions, planning |
+| **GitHub Co-Pilot** | Debugging |
 
 ---
 
@@ -284,7 +285,7 @@ The board was used to track:
 - work in progress;
 - completed tasks.
 
-Add project-board screenshot here if available.
+![project board](assets/project-board.png)
 
 ### GitHub Issues
 
@@ -325,7 +326,6 @@ The testing strategy includes:
 - HTML validation;
 - CSS validation;
 - Python style validation;
-- JavaScript validation where applicable.
 
 No automated unit-test suite is included in the project.
 
@@ -511,7 +511,7 @@ Third-party Bootstrap CSS is not treated as project-authored code.
 
 ![CSS validation](assets/cssval.png)
 
-**Result:** Add final validation result.
+**Result: PASS** 
 
 ---
 
@@ -539,22 +539,28 @@ Generated migration files and `__pycache__` files are excluded.
 | `manage.py` | ![manage.py](assets/managepy.png) | PASS |
 
 
+
 ---
 
-## Manual Accessibility Checks
+## AI Usage
 
-Lighthouse provides automated accessibility checks, but a small amount of manual accessibility testing is also recommended.
+Artificial intelligence tools were used during the development of VenueNest as support resources rather than as replacements for the team's own development work.
 
-Suggested checks:
+The primary AI tools used were **ChatGPT** and **GitHub Copilot**.
 
-- navigate key pages using only the keyboard;
-- confirm focus indicators are visible;
-- confirm form labels are associated with inputs;
-- confirm buttons and links have meaningful text;
-- confirm heading order is logical;
-- confirm images have appropriate `alt` text.
+AI assistance was used for:
 
-Record the final outcome here before submission.
+- debugging Django, Git and deployment issues;
+- explaining errors and suggesting possible fixes;
+- reviewing code structure and implementation approaches;
+- assisting with code suggestions during development;
+- helping organise the README and testing documentation;
+- generating testing plans and documentation checklists;
+- improving wording, formatting and consistency in project documentation.
+
+All AI-generated suggestions were reviewed, tested and adapted by the development team before being included in the project.
+
+AI tools were not used to make autonomous production changes without developer review. Final implementation decisions, testing, validation and project integration remained the responsibility of the development team.
 
 ---
 
@@ -675,10 +681,11 @@ http://127.0.0.1:8000/
 
 ### Media
 
-Project screenshots, wireframes, validation evidence and Lighthouse results are stored in the project's documentation/assets folders.
+Project screenshots, wireframes, validation evidence, browser compatibility evidence and Lighthouse results are stored in the project's `assets/` directory.
 
 ### Acknowledgements
 
 Special thanks to the entire VenueNest hackathon team for collaborating on development, Git/GitHub workflows, testing and integration.
 
-Thanks also to the Code Institute team for their guidance and support throughout the hackathon.
+Also a special thank you to **Marko Tot** and **Tim Nelson** for their advice, guidance and support during the development of the project.
+
