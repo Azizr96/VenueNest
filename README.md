@@ -496,7 +496,7 @@ Because Django templates contain template syntax such as `{% url %}` and `{{ var
 | Home | Live deployed URL | ![Home validation](assets/htmlhome.png) | PASS |
 | Events | Live deployed URL | ![Events validation](assets/htmlevent.png) | PASS |
 | Event Detail | URI / rendered source | ![view Events validation](assets/view-event-html.png) | PASS |
-| Register | Live deployed URL | Add screenshot | Add result |
+| Register | Live deployed URL | ![register page](assets/register-html.png) | Add result |
 | Login | Live deployed URL | ![login ](assets/login-html.png) | PASS |
 | My Bookings | Rendered source | ![my bookings ](assets/my-bookings-html.png) | PASS |
 | Create / Edit / Delete | Rendered source while staff-authenticated | ![my bookings ](assets/admin-event-crud.png) | PASS |
