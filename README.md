@@ -373,7 +373,7 @@ No automated unit-test suite is included in the project.
 | Test | Expected Outcome | Result | Evidence |
 | --- | --- | --- | --- |
 | Main navigation links | Main navigation routes to the correct pages for each user role. | **Pass** | ![Standard user navigation](assets/features/user-navbar.png) ![Staff navigation](assets/features/staff-navbar.png) |
-| Invalid URL / 404 | User receives an appropriate 404 response/page. | **Not tested** | No evidence captured |
+| Invalid URL / 404 | User receives an appropriate 404 response/page. | **PASS** | ![404 page](assets/features/404.png) |
 | Static files | Project styling loads correctly on the deployed site. | **Pass** | ![Home page](assets/features/home.png) |
 | Post-deployment smoke test | Core pages load successfully on the deployed application. | **Pass** | ![Home](assets/features/home.png) ![Events](assets/features/events.png) ![Event detail](assets/features/event-detail.png) |
 
